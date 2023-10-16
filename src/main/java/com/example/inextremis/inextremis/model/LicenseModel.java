@@ -1,7 +1,7 @@
 package com.example.inextremis.inextremis.model;
 
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -37,10 +37,10 @@ public class LicenseModel {
     private String name;
 
     @Column(name = "StartDate")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = "EndDate")
-    private Date endDate;
+    private LocalDate endDate;
 
 
     @OneToMany(mappedBy = "license")

@@ -1,6 +1,6 @@
 package com.example.inextremis.inextremis.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -26,7 +26,7 @@ public class InvoiceModel {
     @Column(name = "Amount")
     private Integer Amount;
     @Column(name = "Date")
-    private Date date;
+    private LocalDate date;
     @Column(name = "Details")
     private String Details;
     @Column(name = "Value")

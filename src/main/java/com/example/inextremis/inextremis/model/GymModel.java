@@ -1,7 +1,9 @@
 package com.example.inextremis.inextremis.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,7 +41,8 @@ public class GymModel {
     private String address;
 
     @Column(name = "Created")
-    private Date created;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate created;
 
     //Downward Connections
     @OneToMany(mappedBy = "gym")
@@ -47,4 +50,5 @@ public class GymModel {
 
     @OneToMany(mappedBy = "gym")
     private List<LicenseModel> license;
+
 }

@@ -1,7 +1,6 @@
 package com.example.inextremis.inextremis.model;
 
-
-import java.sql.Date;
+import java.time.LocalDate;
 
 import com.example.inextremis.inextremis.model.enumeration.TypeMachineENUM;
 
@@ -36,7 +35,7 @@ public class InventoryModel {
     private Long id;
 
     @Column(name = "DatePiurchase")
-    private Date datePurchase;
+    private LocalDate datePurchase;
     @Column(name = "Price")
     private Double price;
 

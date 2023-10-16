@@ -1,6 +1,6 @@
 package com.example.inextremis.inextremis.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,9 +42,9 @@ public class PersonModel {
     @Column(name = "NumDocument")
     private String numDocument;
     @Column(name = "DateBirth")
-    private Date dateBirth;
+    private LocalDate dateBirth;
     @Column(name = "Created")
-    private Date created;
+    private LocalDate created;
     @Column(name = "Email")
     private String email;
     @Column(name = "Password")
