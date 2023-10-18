@@ -25,7 +25,7 @@ import lombok.ToString;
 @Table(name = "CLIENT")
 public class ClientModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private Long id;
     

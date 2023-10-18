@@ -2,6 +2,8 @@ package com.example.inextremis.inextremis.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +29,7 @@ import lombok.ToString;
 @Table(name = "PERSON")
 public class PersonModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private Long id;
 
@@ -42,6 +44,7 @@ public class PersonModel {
     @Column(name = "NumDocument")
     private String numDocument;
     @Column(name = "DateBirth")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateBirth;
     @Column(name = "Created")
     private LocalDate created;

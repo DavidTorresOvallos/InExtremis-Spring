@@ -31,12 +31,17 @@ public class GymService {
     }
 
     public boolean deleteGym(Long id){
-        try{
+        if(gymRepository.existsById(id)){
+            try{
             gymRepository.deleteById(id);
             return true;
-        }catch(Exception ex){
-            return false;   
+            }catch(Exception ex){
+                return false;   
+            }
+        } else {
+            return false;
         }
+        
     }
 /*
     public ResponseEntity<Object> saveGym(GymModel gym){

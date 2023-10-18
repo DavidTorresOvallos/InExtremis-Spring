@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 @Table(name = "INVOICE")
 public class InvoiceModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private Long id;
 

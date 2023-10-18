@@ -16,7 +16,7 @@ import com.example.inextremis.inextremis.model.PersonModel;
 import com.example.inextremis.inextremis.service.PersonService;
 
 @RestController
-@RequestMapping("/gym/{gymId}/people")
+@RequestMapping("/gym/people")
 public class PersonController {
     @Autowired
     private PersonService personService;
@@ -32,7 +32,7 @@ public class PersonController {
 
     @PostMapping()
     public PersonModel savePerson(@RequestBody PersonModel person){
-        return this.savePerson(person);
+        return this.personService.savePerson(person);
     }
 
     @GetMapping(path = "/{id}")
@@ -40,7 +40,7 @@ public class PersonController {
         return this.personService.getById(id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping(path = "/{id}")
     public String deletePersonById(@PathVariable("id") Long id){
         boolean ok = this.personService.deleteById(id);
         if(ok){

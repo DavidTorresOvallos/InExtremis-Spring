@@ -31,11 +31,15 @@ public class PersonService {
     }
 
     public boolean deleteById(Long id){
-        try{
-            personRepository.deleteById(id);
-            return true;
-        }catch(Exception err){
+        if(personRepository.existsById(id)){
+            try{
+                personRepository.deleteById(id);
+                return true;
+            }catch(Exception err){
+                return false;
+            }
+        } else {
             return false;
-        }
+        }   
     }
 }
