@@ -46,7 +46,7 @@ public class GymController {
         if(ok){
             return "Se eliminó el gimnasio " + id + " con éxito";
         }else{
-            return "No se pudo eliminar el gimnasio " + id;
+            return "No se pudo eliminar el gimnasio " + id + " por favor, verifique si existe";
         }
     }
    /* 
